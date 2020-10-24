@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<h1> </h1>
+<center>
+	<br><br><br><br><br><br><br><br><br><br>
+<form method="POST">
+	  {% csrf_token %}  
+	{{form.as_p}}
+	<button>Login</button>
+</form>
+<BODY BGCOLOR="#305088">
+<H1 align="center"></H1>
+</BODY>
+</center>
+
+{% endblock %}

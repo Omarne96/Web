@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+	<br><br><br><br>
+<center><h1>Create an account </h1></center>
+<form method="POST">
+	  {% csrf_token %}  
+	{{form.as_p}}
+	<center><button>Register</button></center>
+</form>
+<BODY BGCOLOR="#305088">
+<H1 align="center"></H1>
+</BODY>
+
+
+{% endblock %}

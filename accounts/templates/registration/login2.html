@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<center>
+<img src="https://t24.tn/uploads/images/image_750x_5c29f366a6dfb.jpg"
+height="450px"
+    width="750px"/>
+
+<h1>	اختر برجك</h1> 
+    <SELECT name="nom" size="1">
+    	{% for b in abraj %}
+	        <OPTION>{{b}}</OPTION><br>
+	    {% endfor%}
+	</SELECT><br>
+
+<h1>	اختر نوعية الاشتراك</h1>
+	<SELECT name="nom2"size="1">
+	{% for f in foll %}
+	    <OPTION>{{f}}</OPTION>
+	{% endfor %}
+	</SELECT>
+<br>
+	
+<form>
+<label for="email">
+	<h1>
+Enter your email:
+</h1>
+</label>
+<br>
+<input type="email" id="email" name="email"><br>
+<label for="email">
+	<h1>
+	ادخل نوعية حسابك البنكي الالكتروني
+	</h1>
+</label>
+</form>
+<br>
+
+<FORM method="POST" action="{% url 'result'%}">
+	{% csrf_token %}
+<SELECT name="nom2"size="1">
+	{% for p in pay %}
+        <OPTION>{{p}}</OPTION>
+    {% endfor %}
+</SELECT>
+
+<br>
+
+<label for="email">
+<h1>
+Enter your payment account:
+</h1>
+</label>
+<br><br>
+<input type="email" id="email" name="email"><br><br>
+<input type="submit" value="ارسال الطلب">
+<br><br><br>
+سيتم دراسة طلبك و سنقوم بمراسلتك عبر الايمايل الخاص بك
+</center>
+<BODY BGCOLOR="#000088">
+</BODY>
+<br>
+
+
+</FORM>
+
+
+
+
+
+{% endblock %}
